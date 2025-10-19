@@ -21,13 +21,16 @@ export const ProductDetailsModal = ({
     <Modal isOpen={isOpen} onClose={onClose} title={product.title}>
       {!isEditing ? (
         <div className="flex flex-col gap-4">
-          <Image
-            width={64}
-            height={64}
-            src={product.image}
-            alt={product.title}
-            className="w-full h-64 object-contain"
-          />
+          <div className="w-full flex justify-center items-center bg-gray-100 rounded-md overflow-hidden h-64">
+            <Image
+              width={300}
+              height={256}
+              src={product.image}
+              alt={product.title}
+              className="object-contain max-h-60"
+              style={{ width: "auto", height: "100%" }}
+            />
+          </div>
           <p className="text-gray-700">{product.description}</p>
           <p className="font-semibold text-blue-600">
             ${product.price.toFixed(2)}

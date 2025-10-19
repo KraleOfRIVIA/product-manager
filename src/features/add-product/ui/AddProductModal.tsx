@@ -71,22 +71,24 @@ const AddProductForm = ({ onSuccess }: Props) => {
         placeholder="URL изображения"
       />
 
-      <select
-        value={category}
-        onChange={(e) => setCategory(e.target.value)}
-        className="border rounded-lg px-3 py-2 w-full text-gray-300"
-        required
-        disabled={categoriesLoading}
-      >
-        <option value="" disabled>
-          {categoriesLoading ? "Загрузка категорий..." : "Выберите категорию"}
-        </option>
-        {categories.map((c: string) => (
-          <option key={c} value={c}>
-            {c}
+      <div>
+        <select
+          value={category}
+          onChange={(e) => setCategory(e.target.value)}
+          className="border rounded-lg px-3 py-2 w-full text-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-300 bg-white"
+          required
+          disabled={categoriesLoading}
+        >
+          <option value="" disabled>
+        {categoriesLoading ? "Загрузка категорий..." : "Выберите категорию"}
           </option>
-        ))}
-      </select>
+          {categories.map((c: string) => (
+        <option key={c} value={c}>
+          {c}
+        </option>
+          ))}
+        </select>
+      </div>
 
       <div className="flex gap-2 justify-end">
         <Button type="submit">Добавить</Button>

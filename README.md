@@ -12,16 +12,14 @@ npm i
 npm install
 ```
 
-После этого выполнить запуск
-
+После этого создать .env.local файл и вписать в него адресс сервера 
+Пример:
+```bash
+NEXT_PUBLIC_API_URL=http://localhost:3001/api
+```
+И наконец произвести запуск
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
 Веб-приложение будет запущено на следующем адрессе [http://localhost:3000](http://localhost:3000).

@@ -73,21 +73,21 @@ export const EditProductForm = ({
       />
 
       <select
-        value={category}
-        onChange={(e) => setCategory(e.target.value)}
-        className="border rounded-lg px-3 py-2 w-full"
-        required
-        disabled={categoriesLoading}
-      >
-        <option value="" disabled>
-          {categoriesLoading ? "Загрузка категорий..." : "Выберите категорию"}
-        </option>
-        {categories.map((c: string) => (
-          <option key={c} value={c}>
-            {c}
+          value={category}
+          onChange={(e) => setCategory(e.target.value)}
+          className="border rounded-lg px-3 py-2 w-full text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-300 bg-white"
+          required
+          disabled={categoriesLoading}
+        >
+          <option value="" disabled>
+        {categoriesLoading ? "Загрузка категорий..." : "Выберите категорию"}
           </option>
-        ))}
-      </select>
+          {categories.map((c: string) => (
+        <option key={c} value={c}>
+          {c}
+        </option>
+          ))}
+        </select>
 
       <div className="flex gap-2 justify-end">
         <Button variant="secondary" type="button" onClick={onCancel}>

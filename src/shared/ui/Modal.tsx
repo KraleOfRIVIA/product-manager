@@ -33,19 +33,23 @@ export const Modal: React.FC<ModalProps> = ({
       onClick={onClose}
     >
       <div
-        className="bg-white rounded-2xl shadow-lg w-full max-w-md p-6 relative animate-fadeIn"
-        onClick={(e) => e.stopPropagation()}
+      className="bg-white rounded-2xl shadow-lg w-full max-w-md p-6 relative animate-fadeIn"
+      onClick={(e) => e.stopPropagation()}
       >
-        <button
-          onClick={onClose}
-          className="absolute top-3 right-3 text-gray-400 hover:text-gray-600 transition"
-        >
-          <X size={20} />
-        </button>
+      <button
+        onClick={onClose}
+        className="absolute top-3 right-3 text-gray-400 hover:text-gray-600 transition"
+      >
+        <X size={20} />
+      </button>
 
-        {title && <h2 className="text-lg font-semibold mb-4">{title}</h2>}
+      {title && (
+        <h2 className="text-lg font-semibold mb-4 text-gray-900">
+        {title}
+        </h2>
+      )}
 
-        <div>{children}</div>
+      <div>{children}</div>
       </div>
     </div>,
     modalRoot,

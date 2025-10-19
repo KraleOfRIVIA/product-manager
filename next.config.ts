@@ -4,9 +4,12 @@ const nextConfig: NextConfig = {
   images: {
     remotePatterns: [
       {
-        protocol: "https",
-        hostname: "fakestoreapi.com",
-        pathname: "/**",
+        protocol: 'https',
+        hostname: '**', // разрешить все HTTPS-домены
+      },
+      {
+        protocol: 'http',
+        hostname: '**', // если где-то используются HTTP-ссылки
       },
     ],
   },
